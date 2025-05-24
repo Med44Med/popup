@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./popup.module.css"
+import {styles} from "./popup.module.css"
 
 const Popup = ({ setShow, className, shadow = true, shadowColor = "rgba(0,0,0,0.4)" , children }) => {
 
