@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.css";
+import styles from "./popup.module.css";
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 const Popup = ({
   setShow,
@@ -9,9 +9,9 @@ const Popup = ({
   children
 }) => {
   return /*#__PURE__*/_jsxs("div", {
-    className: "popupParent",
+    className: styles.popupParent,
     children: [shadow && /*#__PURE__*/_jsx("div", {
-      className: "shadow",
+      className: styles.shadow,
       style: {
         backgroundColor: shadowColor
       }

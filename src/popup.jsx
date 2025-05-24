@@ -1,13 +1,13 @@
 import React from "react";
-import "./style.css";
+import styles from "./popup.module.css"
 
 const Popup = ({ setShow, className, shadow = true, shadowColor = "rgba(0,0,0,0.4)" , children }) => {
 
   return (
-    <div className="popupParent">
+    <div className={styles.popupParent}>
       {shadow && (
         <div
-          className="shadow"
+          className={styles.shadow}
           style={{
             backgroundColor: shadowColor
           }}
