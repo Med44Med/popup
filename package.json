@@ -1,0 +1,33 @@
+{
+  "name": "@molutions/popup",
+  "version": "1.0.0",
+  "description": "a react component that create costum popup page",
+  "main": "dist/accordion.js",
+ "files": ["dist"],
+  "scripts": {
+    "build": "babel src --out-dir dist"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Med44Med/accordion.git"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "ui"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.27.2",
+    "@babel/core": "^7.27.1",
+    "@babel/preset-env": "^7.27.2",
+    "@babel/preset-react": "^7.27.1"
+  },
+  "author": "",
+  "license": "MIT"
+}
+
+
