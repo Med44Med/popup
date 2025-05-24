@@ -19,6 +19,7 @@ const Popup = ({
       alignItems: "center"
     },
     children: [shadow && /*#__PURE__*/_jsx("div", {
+      onClick: () => setShow(false),
       style: {
         position: "absolute",
         top: 0,
