@@ -1,8 +1,8 @@
 {
   "name": "@molutions/popup",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a react component that create costum popup page",
-  "main": "dist/accordion.js",
+  "main": "dist/popup.js",
  "files": ["dist"],
   "scripts": {
     "build": "babel src --out-dir dist"
