@@ -22,6 +22,7 @@ const Popup = ({
     >
       {shadow && (
         <div
+          onClick={() => setShow(false)}
           style={{
             position: "absolute",
             top: 0,
