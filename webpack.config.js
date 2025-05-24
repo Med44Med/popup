@@ -2,76 +2,49 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: "./src/popup.jsx", // Your main entry point
+  entry: "./src/Popup.jsx",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
-    publicPath: "/",
+    filename: "index.js",
+    library: {
+      type: "module",
+    },
+    clean: true,
+  },
+  experiments: {
+    outputModule: true,
+  },
+  externals: {
+    react: "react",
+    "react-dom": "react-dom"
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"],
-          },
-        },
+        use: "babel-loader"
       },
       {
-        // For CSS Modules (files ending with .module.css)
-        test: /\.module\.css$/,
+        test: /\.module\.css$/i,
         use: [
           MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
             options: {
-              modules: {
-                localIdentName: "[name]__[local]--[hash:base64:5]", // Configures how class names are generated
-              },
-              importLoaders: 1, // Number of loaders applied before css-loader (e.g., postcss-loader)
-            },
-          },
-        ],
-      },
-      {
-        // For global CSS (files NOT ending with .module.css)
-        test: /\.css$/,
-        exclude: /\.module\.css$/, // Exclude CSS Modules
-        use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-          // Add postcss-loader if you use PostCSS
-          // {
-          //   loader: 'postcss-loader',
-          //   options: {
-          //     postcssOptions: {
-          //       plugins: [
-          //         require('autoprefixer'),
-          //       ],
-          //     },
-          //   },
-          // },
-        ],
-      },
-    ],
+              modules: true
+            }
+          }
+        ]
+      }
+    ]
+  },
+  resolve: {
+    extensions: [".js", ".jsx"]
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "styles/[name].[contenthash].css", // Output CSS file name
-    }),
-  ],
-  devServer: {
-    static: {
-      directory: path.join(__dirname, "dist"),
-    },
-    compress: true,
-    port: 3000,
-    open: true,
-    hot: true,
-    historyApiFallback: true, // For React Router
-  },
-  mode: process.env.NODE_ENV === "production" ? "production" : "development",
+      filename: "styles.css"
+    })
+  ]
 };

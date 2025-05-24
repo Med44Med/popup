@@ -1,14 +1,13 @@
 {
   "name": "@molutions/popup",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "a react component that create costum popup page",
-  "main": "dist/popup.js",
-  "module": "index.js",
+  "main": "dist/index.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "webpack"
+    "build": "webpack --mode=production"
   },
   "peerDependencies": {
     "react": "^19.0.0",
