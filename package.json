@@ -1,8 +1,8 @@
 {
   "name": "@molutions/popup",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "a react component that create costum popup page",
-  "main": "dist/index.js",
+  "main": "dist/popup.js",
   "files": [
     "dist"
   ],
