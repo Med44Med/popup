@@ -1,15 +1,35 @@
 import React from "react";
-import styles from "./popup.module.css"
 
-const Popup = ({ setShow, className, shadow = true, shadowColor = "rgba(0,0,0,0.4)" , children }) => {
-
+const Popup = ({
+  setShow,
+  className,
+  shadow = true,
+  shadowColor = "rgba(0,0,0,0.4)",
+  children,
+}) => {
   return (
-    <div className={styles.popupParent}>
+    <div
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       {shadow && (
         <div
-          className={styles.shadow}
           style={{
-            backgroundColor: shadowColor
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            zIndex: 900,
+            backgroundColor: shadowColor,
           }}
         ></div>
       )}
